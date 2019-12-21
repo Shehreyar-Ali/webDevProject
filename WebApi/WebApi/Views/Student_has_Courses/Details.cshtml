@@ -1,0 +1,114 @@
+﻿@model WebApi.Student_has_Courses
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student_has_Courses</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.question1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cours.Major_majorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cours.Major_majorID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.Major_majorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.Major_majorID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

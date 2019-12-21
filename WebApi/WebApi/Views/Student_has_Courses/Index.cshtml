@@ -1,0 +1,99 @@
+﻿@model IEnumerable<WebApi.Student_has_Courses>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.question1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.question2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.question3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.question4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.question5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.question6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.question7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.question8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.question9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.question10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cours.Major_majorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student.Major_majorID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.question1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.question2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.question3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.question4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.question5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.question6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.question7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.question8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.question9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.question10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cours.Major_majorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.Major_majorID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
