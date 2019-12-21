@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CourseEvalDB_WDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="loginAdmin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="passwordAdmin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Cours">
+    <Key>
+      <PropertyRef Name="courseID" />
+    </Key>
+    <Property Name="courseID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Major_majorID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="courseName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="courseInstructor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Major" Relationship="Self.FK__Courses__Major_m__412EB0B6" FromRole="Courses" ToRole="Major" />
+    <NavigationProperty Name="Student_has_Courses" Relationship="Self.FK__Student_h__Cours__44FF419A" FromRole="Courses" ToRole="Student_has_Courses" />
+  </EntityType>
+  <EntityType Name="Major">
+    <Key>
+      <PropertyRef Name="majorID" />
+    </Key>
+    <Property Name="majorID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="School_schoolID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="majorName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Courses" Relationship="Self.FK__Courses__Major_m__412EB0B6" FromRole="Major" ToRole="Courses" />
+    <NavigationProperty Name="School" Relationship="Self.FK__Major__School_sc__3B75D760" FromRole="Major" ToRole="School" />
+    <NavigationProperty Name="Students" Relationship="Self.FK__Student__Major_m__3E52440B" FromRole="Major" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="School">
+    <Key>
+      <PropertyRef Name="schoolID" />
+    </Key>
+    <Property Name="schoolID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Majors" Relationship="Self.FK__Major__School_sc__3B75D760" FromRole="School" ToRole="Major" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="stuID" />
+    </Key>
+    <Property Name="stuID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Major_majorID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="loginStu" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="passwordStu" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Major" Relationship="Self.FK__Student__Major_m__3E52440B" FromRole="Student" ToRole="Major" />
+    <NavigationProperty Name="Student_has_Courses" Relationship="Self.FK__Student_h__Stude__440B1D61" FromRole="Student" ToRole="Student_has_Courses" />
+  </EntityType>
+  <EntityType Name="Student_has_Courses">
+    <Key>
+      <PropertyRef Name="Student_stuID" />
+      <PropertyRef Name="Courses_courseID" />
+    </Key>
+    <Property Name="Student_stuID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Courses_courseID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="question1" Type="Int32" />
+    <Property Name="question2" Type="Int32" />
+    <Property Name="question3" Type="Int32" />
+    <Property Name="question4" Type="Int32" />
+    <Property Name="question5" Type="Int32" />
+    <Property Name="question6" Type="Int32" />
+    <Property Name="question7" Type="Int32" />
+    <Property Name="question8" Type="Int32" />
+    <Property Name="question9" Type="Int32" />
+    <Property Name="question10" Type="Int32" />
+    <NavigationProperty Name="Cours" Relationship="Self.FK__Student_h__Cours__44FF419A" FromRole="Student_has_Courses" ToRole="Courses" />
+    <NavigationProperty Name="Student" Relationship="Self.FK__Student_h__Stude__440B1D61" FromRole="Student_has_Courses" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__Courses__Major_m__412EB0B6">
+    <End Role="Major" Type="Self.Major" Multiplicity="1" />
+    <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Major">
+        <PropertyRef Name="majorID" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="Major_majorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student_h__Cours__44FF419A">
+    <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
+    <End Role="Student_has_Courses" Type="Self.Student_has_Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="courseID" />
+      </Principal>
+      <Dependent Role="Student_has_Courses">
+        <PropertyRef Name="Courses_courseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Major__School_sc__3B75D760">
+    <End Role="School" Type="Self.School" Multiplicity="1" />
+    <End Role="Major" Type="Self.Major" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="School">
+        <PropertyRef Name="schoolID" />
+      </Principal>
+      <Dependent Role="Major">
+        <PropertyRef Name="School_schoolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student__Major_m__3E52440B">
+    <End Role="Major" Type="Self.Major" Multiplicity="1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Major">
+        <PropertyRef Name="majorID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Major_majorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student_h__Stude__440B1D61">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Student_has_Courses" Type="Self.Student_has_Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="stuID" />
+      </Principal>
+      <Dependent Role="Student_has_Courses">
+        <PropertyRef Name="Student_stuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CourseEvalDB_WDEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Courses" EntityType="Self.Cours" />
+    <EntitySet Name="Majors" EntityType="Self.Major" />
+    <EntitySet Name="Schools" EntityType="Self.School" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <EntitySet Name="Student_has_Courses" EntityType="Self.Student_has_Courses" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK__Courses__Major_m__412EB0B6" Association="Self.FK__Courses__Major_m__412EB0B6">
+      <End Role="Major" EntitySet="Majors" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student_h__Cours__44FF419A" Association="Self.FK__Student_h__Cours__44FF419A">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Student_has_Courses" EntitySet="Student_has_Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Major__School_sc__3B75D760" Association="Self.FK__Major__School_sc__3B75D760">
+      <End Role="School" EntitySet="Schools" />
+      <End Role="Major" EntitySet="Majors" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student__Major_m__3E52440B" Association="Self.FK__Student__Major_m__3E52440B">
+      <End Role="Major" EntitySet="Majors" />
+      <End Role="Student" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student_h__Stude__440B1D61" Association="Self.FK__Student_h__Stude__440B1D61">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Student_has_Courses" EntitySet="Student_has_Courses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

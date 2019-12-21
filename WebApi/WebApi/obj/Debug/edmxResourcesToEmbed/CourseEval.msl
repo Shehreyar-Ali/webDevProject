@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CourseEvalDB_WDModelStoreContainer" CdmEntityContainer="CourseEvalDB_WDEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="CourseEvalDB_WDModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+          <ScalarProperty Name="loginAdmin" ColumnName="loginAdmin" />
+          <ScalarProperty Name="passwordAdmin" ColumnName="passwordAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="CourseEvalDB_WDModel.Cours">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="courseID" ColumnName="courseID" />
+          <ScalarProperty Name="Major_majorID" ColumnName="Major_majorID" />
+          <ScalarProperty Name="courseName" ColumnName="courseName" />
+          <ScalarProperty Name="courseInstructor" ColumnName="courseInstructor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Majors">
+      <EntityTypeMapping TypeName="CourseEvalDB_WDModel.Major">
+        <MappingFragment StoreEntitySet="Major">
+          <ScalarProperty Name="majorID" ColumnName="majorID" />
+          <ScalarProperty Name="School_schoolID" ColumnName="School_schoolID" />
+          <ScalarProperty Name="majorName" ColumnName="majorName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schools">
+      <EntityTypeMapping TypeName="CourseEvalDB_WDModel.School">
+        <MappingFragment StoreEntitySet="School">
+          <ScalarProperty Name="schoolID" ColumnName="schoolID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="CourseEvalDB_WDModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="stuID" ColumnName="stuID" />
+          <ScalarProperty Name="Major_majorID" ColumnName="Major_majorID" />
+          <ScalarProperty Name="loginStu" ColumnName="loginStu" />
+          <ScalarProperty Name="passwordStu" ColumnName="passwordStu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student_has_Courses">
+      <EntityTypeMapping TypeName="CourseEvalDB_WDModel.Student_has_Courses">
+        <MappingFragment StoreEntitySet="Student_has_Courses">
+          <ScalarProperty Name="Student_stuID" ColumnName="Student_stuID" />
+          <ScalarProperty Name="Courses_courseID" ColumnName="Courses_courseID" />
+          <ScalarProperty Name="question1" ColumnName="question1" />
+          <ScalarProperty Name="question2" ColumnName="question2" />
+          <ScalarProperty Name="question3" ColumnName="question3" />
+          <ScalarProperty Name="question4" ColumnName="question4" />
+          <ScalarProperty Name="question5" ColumnName="question5" />
+          <ScalarProperty Name="question6" ColumnName="question6" />
+          <ScalarProperty Name="question7" ColumnName="question7" />
+          <ScalarProperty Name="question8" ColumnName="question8" />
+          <ScalarProperty Name="question9" ColumnName="question9" />
+          <ScalarProperty Name="question10" ColumnName="question10" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CourseEvalDB_WDModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
