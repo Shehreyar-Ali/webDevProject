@@ -56,7 +56,7 @@ namespace WebApi.Controllers
                 {
                     Session["Username"] = User.loginStu;
                     FormsAuthentication.SetAuthCookie(User.loginStu, false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "stuHome");
                 }
                 else
                 {
