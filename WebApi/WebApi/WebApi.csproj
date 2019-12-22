@@ -166,9 +166,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CoursController.cs" />
+    <Compile Include="Controllers\courseEvalPageController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Student_has_CoursesController.cs" />
+    <Compile Include="Controllers\stuHomeController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Cours.cs">
@@ -195,6 +197,7 @@
     <Compile Include="Major.cs">
       <DependentUpon>CourseEval.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CourseEval.cs" />
     <Compile Include="Models\Courses.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -287,6 +290,8 @@
     <Content Include="Views\Student_has_Courses\Details.cshtml" />
     <Content Include="Views\Student_has_Courses\Edit.cshtml" />
     <Content Include="Views\Student_has_Courses\Index.cshtml" />
+    <Content Include="Views\stuHome\Index.cshtml" />
+    <Content Include="Views\courseEvalPage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
