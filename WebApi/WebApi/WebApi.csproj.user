@@ -19,26 +19,11 @@
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
     <ProjectView>ShowAllFiles</ProjectView>
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
     <WebStackScaffolding_DbContextTypeFullName>WebApi.CourseEvalDB_WDEntities</WebStackScaffolding_DbContextTypeFullName>
-=======
-=======
->>>>>>> 62e4a03d3d2b731238964c87584b32058453959f
->>>>>>> Stashed changes
     <_SelectedScaffolderID>MvcControllerWithContextScaffolder</_SelectedScaffolderID>
     <_SelectedScaffolderCategoryPath>root/Common</_SelectedScaffolderCategoryPath>
     <WebStackScaffolding_DbContextTypeFullName>WebApi.CourseEvalDB_WDEntities</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> 62e4a03d3d2b731238964c87584b32058453959f
-=======
->>>>>>> 62e4a03d3d2b731238964c87584b32058453959f
->>>>>>> Stashed changes
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

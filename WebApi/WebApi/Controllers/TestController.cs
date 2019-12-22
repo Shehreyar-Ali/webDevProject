@@ -4,16 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApi.Models;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
 using System.Web.Security;
-=======
->>>>>>> 62e4a03d3d2b731238964c87584b32058453959f
-=======
->>>>>>> 62e4a03d3d2b731238964c87584b32058453959f
->>>>>>> Stashed changes
 
 namespace WebApi.Controllers
 {
@@ -37,10 +28,7 @@ namespace WebApi.Controllers
             return View();
         }
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
@@ -76,34 +64,5 @@ namespace WebApi.Controllers
             }
         }
 
-
-
-=======
-=======
->>>>>>> 62e4a03d3d2b731238964c87584b32058453959f
->>>>>>> Stashed changes
-        [HttpPost]
-        public ActionResult Login(StuMember StLogin)
-        {
-            using (var context = new CourseEvalDB_WDEntities())
-            {
-                bool isValid = context.Students.Any(stu => stu.loginStu == StLogin.loginStu && stu.passwordStu == StLogin.passwordStu);
-                if (isValid)
-                {
-                    return RedirectToAction("Index", "Student_has_Courses");
-                }
-                ModelState.AddModelError("", "Invalid Username and password");
-                return View();
-            }
-                return View();
-        }
-
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> 62e4a03d3d2b731238964c87584b32058453959f
-=======
->>>>>>> 62e4a03d3d2b731238964c87584b32058453959f
->>>>>>> Stashed changes
     }
 }
