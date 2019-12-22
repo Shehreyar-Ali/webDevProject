@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using WebApi.Models;
 using System.Web.Security;
+using System.Globalization;
+using System.Web.SessionState;
 
 namespace WebApi.Controllers
 {
@@ -52,6 +54,7 @@ namespace WebApi.Controllers
                 }
                 if (isvalid == true)
                 {
+                    Session["Username"] = User.loginStu;
                     FormsAuthentication.SetAuthCookie(User.loginStu, false);
                     return RedirectToAction("Index", "Home");
                 }
