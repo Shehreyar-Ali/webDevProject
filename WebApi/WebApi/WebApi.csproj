@@ -193,7 +193,19 @@
     <Compile Include="Major.cs">
       <DependentUpon>CourseEval.tt</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="Models\StuMember.cs" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <Compile Include="Models\Member.cs" />
+=======
+    <Compile Include="Models\StuMember.cs" />
+>>>>>>> 62e4a03d3d2b731238964c87584b32058453959f
+=======
+    <Compile Include="Models\StuMember.cs" />
+>>>>>>> 62e4a03d3d2b731238964c87584b32058453959f
+>>>>>>> Stashed changes
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="School.cs">
       <DependentUpon>CourseEval.tt</DependentUpon>
@@ -262,7 +274,9 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
