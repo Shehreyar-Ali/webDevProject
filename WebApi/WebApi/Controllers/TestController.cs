@@ -53,7 +53,7 @@ namespace WebApi.Controllers
                 if (isvalid == true)
                 {
                     FormsAuthentication.SetAuthCookie(User.loginStu, false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "stuHome");
                 }
                 else
                 {

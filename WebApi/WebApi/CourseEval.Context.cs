@@ -34,5 +34,6 @@ namespace WebApi
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
 
+        public System.Data.Entity.DbSet<WebApi.Models.CourseEval> CourseEvals { get; set; }
     }
 }
