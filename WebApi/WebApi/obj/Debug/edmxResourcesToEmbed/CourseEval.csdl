@@ -68,16 +68,6 @@
     <NavigationProperty Name="Cours" Relationship="Self.FK__Student_h__Cours__44FF419A" FromRole="Student_has_Courses" ToRole="Courses" />
     <NavigationProperty Name="Student" Relationship="Self.FK__Student_h__Stude__440B1D61" FromRole="Student_has_Courses" ToRole="Student" />
   </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <Association Name="FK__Courses__Major_m__412EB0B6">
     <End Role="Major" Type="Self.Major" Multiplicity="1" />
     <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
@@ -145,7 +135,6 @@
     <EntitySet Name="Schools" EntityType="Self.School" />
     <EntitySet Name="Students" EntityType="Self.Student" />
     <EntitySet Name="Student_has_Courses" EntityType="Self.Student_has_Courses" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <AssociationSet Name="FK__Courses__Major_m__412EB0B6" Association="Self.FK__Courses__Major_m__412EB0B6">
       <End Role="Major" EntitySet="Majors" />
       <End Role="Courses" EntitySet="Courses" />
