@@ -31,7 +31,7 @@ namespace WebApi
         public virtual DbSet<School> Schools { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Student_has_Courses> Student_has_Courses { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        //public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
 
         public System.Data.Entity.DbSet<WebApi.Models.CourseEval> CourseEvals { get; set; }

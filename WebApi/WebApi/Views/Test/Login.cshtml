@@ -4,6 +4,8 @@
     ViewBag.Title = "Login";
 }
 
+@*<link rel="stylesheet" type="text/css" href="~/Content/Login.css" media="screen" />*@
+
 <h2>Login</h2>
 
 @using (Html.BeginForm()) 
@@ -31,19 +33,70 @@
         <div class="form-group">
             @Html.LabelFor(model => model.passwordStu, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.passwordStu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.PasswordFor(model => model.passwordStu, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.passwordStu, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Login" class="btn btn-default" />
+        <div class="form-group" id="fdiv">
+
+            <div class="col-md-offset-2 col-md-10" id="sdiv">
+
+                <input type="submit" value="Login" class="btn btn-default" id="loginButton"/>
+
             </div>
+
         </div>
     </div>
+
+    @*<style>
+        import url("https://fonts.googleapis.com/css?family=Open+Sans");
+        body {
+          background: linear-gradient(35deg, #64B6AC, #3C6B7C 100%);
+        }
+
+        #fdiv,
+        #sdiv
+
+
+
+        #fdiv {
+          margin: auto;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          width: 170px;
+          height: 50px;
+          transition: all 0.3s ease;
+        }
+
+        #sdiv {
+          width: 100%;
+          height: 50px;
+          border: 2px solid #FFF;
+          transition: all 0.3s ease;
+          border-radius: 5px;
+        }
+
+        #fdiv,
+
+
+        .container:hover {
+           width: 280px;
+
+          .wrap {
+          padding-bottom: 17px;
+          }
+          #fdiv {
+            transform: translateY(-8px);
+            padding-top: 5px;
+
+        }
+
+    </style>*@
 }
 
-<div>
+@*<div>
     @Html.ActionLink("Back to List", "Index")
-</div>
+</div>*@
